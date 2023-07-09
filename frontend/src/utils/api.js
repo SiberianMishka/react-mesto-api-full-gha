@@ -98,10 +98,10 @@ class Api {
 // Получение данных с сервера
 const api = new Api({
   // baseUrl: 'http://localhost:3000',
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59/',
-  // baseUrl: 'https://api.stremaus.nomoredomains.work/',
+  // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59/',
+  baseUrl: 'https://api.stremaus.nomoredomains.work/',
   headers: {
-    authorization: 'b527eab8-a398-4bfd-9eaf-a70645b0f036',
+    // authorization: 'b527eab8-a398-4bfd-9eaf-a70645b0f036',
     'Content-Type': 'application/json'
   }
 });
