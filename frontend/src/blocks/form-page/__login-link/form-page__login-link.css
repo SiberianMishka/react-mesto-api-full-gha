@@ -1,0 +1,11 @@
+.form-page__login-link {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 0;
+}

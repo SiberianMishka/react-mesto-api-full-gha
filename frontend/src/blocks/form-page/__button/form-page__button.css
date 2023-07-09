@@ -1,0 +1,18 @@
+.form-page__button {
+  width: 358px;
+  height: 50px;
+  background: #fff;
+  border-radius: 2px;
+  border: none;
+  margin-top: 216px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+}
+
+.form-page__button:hover {
+  opacity: 0.85;
+}
