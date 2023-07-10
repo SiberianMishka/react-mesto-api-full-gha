@@ -49,8 +49,6 @@ class Auth {
 }
 
 const auth = new Auth({
-    // baseUrl: 'http://localhost:3000',
-    // baseUrl: 'https://auth.nomoreparties.co/',
     baseUrl: 'https://api.stremaus.nomoredomains.work/',
 });
 
