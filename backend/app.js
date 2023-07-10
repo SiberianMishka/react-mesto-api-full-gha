@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const parser = require('cookie-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
-const cors = require('./middlewares/cors');
+const cors = require('cors');
+// const cors = require('./middlewares/cors');
 const { errorHandler } = require('./middlewares/error-handler');
 const { validateSignUp, validateSignIn } = require('./middlewares/validation');
 const { createUser, login } = require('./controllers/users');
@@ -39,7 +39,6 @@ mongoose
 // app.use(cors());
 // app.use(helmet());
 // app.use(limiter);
-app.use(parser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -53,10 +52,6 @@ app.get('/crash-test', () => {
 
 app.post('/signup', validateSignUp, createUser);
 app.post('/signin', validateSignIn, login);
-
-app.get('/signout', (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
-});
 
 app.use(auth);
 
