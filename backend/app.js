@@ -36,7 +36,7 @@ mongoose
   .then(() => console.log(`Connected to DB: ${BASE_PATH}`)) // eslint-disable-line no-console
   .catch((err) => console.log(err)); // eslint-disable-line no-console
 
-// app.use(cors());
+app.use(cors());
 // app.use(helmet());
 // app.use(limiter);
 app.use(express.json());
