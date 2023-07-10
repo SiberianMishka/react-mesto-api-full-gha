@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
 const cors = require('cors');
-// const cors = require('./middlewares/cors');
 const { errorHandler } = require('./middlewares/error-handler');
 const { validateSignUp, validateSignIn } = require('./middlewares/validation');
 const { createUser, login } = require('./controllers/users');
@@ -16,7 +15,6 @@ const auth = require('./middlewares/auth');
 const router = require('./routes/index');
 
 const { PORT, BASE_PATH } = process.env;
-// const { PORT = 3000, BASE_PATH = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const app = express();
 
@@ -37,8 +35,8 @@ mongoose
   .catch((err) => console.log(err)); // eslint-disable-line no-console
 
 app.use(cors());
-// app.use(helmet());
-// app.use(limiter);
+app.use(helmet());
+app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
