@@ -7,7 +7,7 @@ const NotFoundError = require('../errors/not-found-err');
 const getCards = (req, res, next) => {
   Card.find({})
     .populate(['owner', 'likes'])
-    .then((cards) => res.send(cards.reverse()))
+    .then((cards) => res.send(cards))
     .catch((err) => next(err));
 };
 
@@ -16,7 +16,7 @@ const createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   Card.create({ name, link, owner })
-    .then((card) => card.populate('owner'))
+    // .then((card) => card.populate('owner'))
     .then((card) => res.status(201).send(card))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
