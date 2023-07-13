@@ -13,14 +13,3 @@ IP-адрес 84.201.166.232
 Frontend https://stremaus.nomoredomains.work  
 
 Backend https://api.stremaus.nomoredomains.work
-
-
-# Проектная работа "Место"
-
-## Описание:
-_Интерактивный адаптивный одностраничный сайт, куда можно добавлять фотографии, удалять их, ставить лайки и редактировать профиль. Происходит обмен данными с сервером. Присутствует валидация вводимых данных. Реализована регистрация и авторизация пользователей._
-
-## Ссылка на проект:
-IP 51.250.102.170  
-Frontend https://stremaus.nomoredomains.work  
-Backend https://api.stremaus.nomoredomains.work

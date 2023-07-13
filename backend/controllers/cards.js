@@ -6,6 +6,7 @@ const NotFoundError = require('../errors/not-found-err');
 
 const getCards = (req, res, next) => {
   Card.find({})
+    .populate(['owner', 'likes'])
     .then((cards) => res.send(cards))
     .catch((err) => next(err));
 };
@@ -62,7 +63,7 @@ const setCardLike = (req, res, next) => {
     req.params.cardId,
     { $addToSet: { likes: req.user._id } },
     { new: true },
-  ).populate(['owner'])
+  ).populate(['owner', 'likes'])
     .then((card) => {
       if (card) {
         res.send(card);
@@ -85,7 +86,7 @@ const deleteCardLike = (req, res, next) => {
     req.params.cardId,
     { $pull: { likes: req.user._id } },
     { new: true },
-  ).populate(['owner'])
+  ).populate(['owner', 'likes'])
     .then((card) => {
       if (card) {
         res.send(card);

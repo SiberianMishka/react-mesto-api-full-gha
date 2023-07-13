@@ -99,7 +99,7 @@ class Api {
   // Постановка и снятие лайка
   changeLikeCardStatus(cardId, isNotLiked) {
     if (isNotLiked) {
-      return fetch(`${this._baseUrl}cards/likes/${cardId}`, {
+      return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ class Api {
       })
         .then(this._checkResponce)
     } else {
-      return fetch(`${this._baseUrl}cards/likes/${cardId}`, {
+      return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
